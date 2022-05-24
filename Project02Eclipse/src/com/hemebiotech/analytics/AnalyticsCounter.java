@@ -27,44 +27,25 @@ public class AnalyticsCounter {
 		 */
 		
 			
-		ReadSymptomDataFromFile lecture = new ReadSymptomDataFromFile(
+		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile(
 				"D:\\sauvegardeGit\\Projet-2-biotech\\Project02Eclipse\\src\\symptoms.txt");
 		
 		
 		
-		List<String> symptomList = lecture.GetSymptoms();
-		Map<String, Integer> resultat = new HashMap<String, Integer>();
-
-		resultat = countSymptom(symptomList);
-		afficheMap(resultat);
+		List<String> symptomList = reader.GetSymptoms();
+		CountOccurrence countData = new CountOccurrence();
+		Map<String,Integer> mapCount = countData.getAnalytics(symptomList);
+		afficheMap(mapCount);
+		Alphabetical mapSort =  new Alphabetical();
+		Map<String,Integer> result= mapSort.sortAlpha(mapCount);
+		afficheMap(result);
 		WriterDataInFile writeFile = new WriterDataInFile(
 				"D:\\sauvegardeGit\\Projet-2-biotech\\Project02Eclipse\\src\\result.out");
-		writeFile.SetData(resultat);
+		writeFile.SetData(result);
 
 	}
-
-	public static Map<String, Integer> countSymptom(List<String> symptom) {
-		/**
-		 * Create Map order with all symptom and this occurence
-		 * 
-		 * @return ordered map : Key is the symptom and Value is symptom count
-		 */
-
-		Map<String, Integer> symptomNombre = new TreeMap<String, Integer>();
-
-		for (String s : symptom) {
-
-			if (!symptomNombre.containsKey(s)) {
-				symptomNombre.put(s, 1);
-			} else {
-				Integer value = symptomNombre.get(s) + 1;
-				symptomNombre.replace(s, value);
-			}
-		}
-		return symptomNombre;
-
-	}
-
+	
+	
 	public static void afficheMap(Map<String, Integer> map) {
 
 		map.forEach((symptom, compteur) -> System.out.println(symptom + " " + compteur));
