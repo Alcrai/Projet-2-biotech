@@ -5,6 +5,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 
+ * @author Alexandra Craipain
+ * 
+ * Write the symptom data and this occurrence in file
+ *
+ */
 public class WriterDataInFile implements IDataWriter {
 
 	private String filepath;

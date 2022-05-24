@@ -9,9 +9,9 @@ public class Alphabetical implements AlphabeticalSort{
 	public Map<String,Integer> sortAlpha( Map<String,Integer> notOrder){
 		
 		Map<String, Integer> map = new TreeMap<String, Integer>();
-	
-		notOrder.forEach((value, key) -> map.put(value,key));
-	
+		if (! notOrder.isEmpty()) {
+			notOrder.forEach((value, key) -> map.put(value,key));
+		}
 		return map;
 	
 	}

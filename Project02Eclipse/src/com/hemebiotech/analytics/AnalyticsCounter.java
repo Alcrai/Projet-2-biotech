@@ -13,43 +13,36 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * Analyzes the collected data
+ * 
+ */
 public class AnalyticsCounter {
+
 	/**
-	 * Analyzes the collected data
-	 * 
+	 * Read Symptom from file, Count the occurrence of symptom, Sort in alphabetical and create file of result in a same
+	 * directory
 	 */
-
 	public static void main(String args[]) throws Exception {
-		/**
-		 * read File text and analyze a data
-		 * 
-		 * create a new file with analyze
-		 */
 		
-			
-		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile(
-				"D:\\sauvegardeGit\\Projet-2-biotech\\Project02Eclipse\\src\\symptoms.txt");
+		String filePath = "Project02Eclipse/src/";
 		
-		
-		
-		List<String> symptomList = reader.GetSymptoms();
+		ReadSymptomDataFromFile reader = new ReadSymptomDataFromFile(filePath + "symptoms.txt");
+		List<String> symptomList = reader.getSymptoms();
 		CountOccurrence countData = new CountOccurrence();
-		Map<String,Integer> mapCount = countData.getAnalytics(symptomList);
-		afficheMap(mapCount);
-		Alphabetical mapSort =  new Alphabetical();
-		Map<String,Integer> result= mapSort.sortAlpha(mapCount);
-		afficheMap(result);
-		WriterDataInFile writeFile = new WriterDataInFile(
-				"D:\\sauvegardeGit\\Projet-2-biotech\\Project02Eclipse\\src\\result.out");
+		Map<String, Integer> mapCount = countData.getAnalytics(symptomList);
+		// afficheMap(mapCount);
+		
+		Alphabetical mapSort = new Alphabetical();
+		Map<String, Integer> result = mapSort.sortAlpha(mapCount);
+		// afficheMap(result);
+		
+		WriterDataInFile writeFile = new WriterDataInFile(filePath + "result.out");
 		writeFile.SetData(result);
-
 	}
-	
-	
-	public static void afficheMap(Map<String, Integer> map) {
 
-		map.forEach((symptom, compteur) -> System.out.println(symptom + " " + compteur));
-
-	}
+//	public static void afficheMap(Map<String, Integer> map) {
+//		map.forEach((symptom, compteur) -> System.out.println(symptom + " " + compteur));
+//	}
 
 }

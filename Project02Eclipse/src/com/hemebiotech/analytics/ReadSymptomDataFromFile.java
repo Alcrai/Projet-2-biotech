@@ -23,8 +23,13 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		this.filepath = filepath;
 	}
 	
+	/**
+	 * read symptom in file
+	 * 
+	 * @return List of symptom
+	 */
 	@Override
-	public List<String> GetSymptoms() throws IOException {
+	public List<String> getSymptoms() throws IOException {
 		ArrayList<String> result = new ArrayList<String>();
 		
 		if (filepath != null) {
