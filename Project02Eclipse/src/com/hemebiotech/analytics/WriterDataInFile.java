@@ -21,7 +21,7 @@ public class WriterDataInFile implements IDataWriter {
 	}
 
 	@Override
-	public void SetData(Map<String, Integer> map) {
+	public void setData(Map<String, Integer> map) {
 		if (filepath != null) {
 			try {
 

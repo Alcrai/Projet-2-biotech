@@ -13,10 +13,10 @@ import java.util.Map;
  *@return Map the key is symptom and the value is occurrence of symptom
  */
 
-public class CountOccurrence implements AnalyticsData{
+public class CountOccurrence implements ICount{
 	
 	@Override
-	public Map<String, Integer> getAnalytics(List<String> list) {
+	public Map<String, Integer> getCount(List<String> list) {
 		
 		Map<String,Integer> map = new HashMap<String,Integer>();
 		

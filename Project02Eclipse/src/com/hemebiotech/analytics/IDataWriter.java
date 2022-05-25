@@ -13,8 +13,9 @@ public interface IDataWriter {
 	 * If no data is available, return an empty map
 	 * 
 	 * a raw map of all symptom data and occurrence obtained from a data source
+	 * @param Map
 	 */
-	public void SetData(Map<String, Integer> map);
+	void setData(Map<String, Integer> map);
 
 }
 
