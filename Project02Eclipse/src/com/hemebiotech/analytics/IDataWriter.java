@@ -3,9 +3,8 @@ package com.hemebiotech.analytics;
 import java.util.Map;
 
 /**
- * @author Alexandra Craipain
- * 
- *Write the analyze data in all source
+ * Write the analyze data in all source
+ *
  */
 public interface IDataWriter {
 	

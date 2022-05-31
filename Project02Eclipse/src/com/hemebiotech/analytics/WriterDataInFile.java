@@ -6,10 +6,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
- * @author Alexandra Craipain
- * 
  * Write the symptom data and this occurrence in file
+ * 
  *
  */
 public class WriterDataInFile implements IDataWriter {
@@ -20,6 +18,11 @@ public class WriterDataInFile implements IDataWriter {
 		this.filepath = filepath;
 	}
 
+	/**
+	 * Write the symptom data and this occurrence in file
+	 * 
+	 *@param  a Map 
+	 */
 	@Override
 	public void setData(Map<String, Integer> map) {
 		if (filepath != null) {

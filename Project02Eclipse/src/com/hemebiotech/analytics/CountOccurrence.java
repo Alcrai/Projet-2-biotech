@@ -9,12 +9,15 @@ import java.util.Map;
  * Implement AnalyticsData
  * Count Occurrence of symptom
  * 
- *@param List of symptom
- *@return Map the key is symptom and the value is occurrence of symptom
  */
-
 public class CountOccurrence implements ICount{
 	
+	/**
+	 * Count Occurrence of symptom
+	 * 
+	 *@param List of symptom
+	 *@return Map the key is symptom and the value is occurrence of symptom
+	 */
 	@Override
 	public Map<String, Integer> getCount(List<String> list) {
 		

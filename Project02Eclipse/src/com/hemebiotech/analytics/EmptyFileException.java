@@ -6,6 +6,10 @@ package com.hemebiotech.analytics;
  */
 public class EmptyFileException extends Exception{
 	
+	/**
+	 * If file is empty return the message "File Empty"
+	 *
+	 */
 	public EmptyFileException (String error){
 		super("File Empty");
 	}

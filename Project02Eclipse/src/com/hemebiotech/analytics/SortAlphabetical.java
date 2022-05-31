@@ -10,6 +10,12 @@ import java.util.TreeMap;
  */
 public class SortAlphabetical implements ISort {
 	
+	/**
+	 * Organize a map in alphabetics order
+	 * 
+	 *@param a Map not order
+	 *@return a Map order
+	 */
 	@Override
 	public Map<String,Integer> sortAlpha(Map<String,Integer> notOrder){
 		
