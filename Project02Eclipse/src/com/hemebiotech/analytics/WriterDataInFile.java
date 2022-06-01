@@ -2,7 +2,6 @@ package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -35,7 +34,6 @@ public class WriterDataInFile implements IDataWriter {
 						writer.write(symptom + " " + compteur + "\n");
 
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				});
@@ -43,7 +41,6 @@ public class WriterDataInFile implements IDataWriter {
 				writer.close();
 
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 

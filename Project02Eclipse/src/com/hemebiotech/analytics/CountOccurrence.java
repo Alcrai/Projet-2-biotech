@@ -6,29 +6,28 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Implement AnalyticsData
- * Count Occurrence of symptom
+ * Implement AnalyticsData Count Occurrence of symptom
  * 
  */
-public class CountOccurrence implements ICount{
-	
+public class CountOccurrence implements ICount {
+
 	/**
 	 * Count Occurrence of symptom
 	 * 
-	 *@param List of symptom
-	 *@return Map the key is symptom and the value is occurrence of symptom
+	 * @param List of symptom
+	 * @return Map the key is symptom and the value is occurrence of symptom
 	 */
 	@Override
-	public Map<String, Integer> getCount(List<String> list) {
-		
-		Map<String,Integer> map = new HashMap<String,Integer>();
-		
-		if (list != null) {
-			for (String l:list) {
-				map.put(l, Collections.frequency(list, l));
+	public Map<String, Integer> getCount(List<String> symptoms) {
+
+		Map<String, Integer> map = new HashMap<String, Integer>();
+
+		if (symptoms != null) {
+			for (String symptom : symptoms) {
+				map.put(symptom, Collections.frequency(symptoms, symptom));
 			}
 		}
 		return map;
 	}
-	
+
 }

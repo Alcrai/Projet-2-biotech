@@ -14,7 +14,7 @@ import java.util.List;
 public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	private String filepath;
-	
+
 	/**
 	 * 
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
@@ -22,7 +22,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	public ReadSymptomDataFromFile (String filepath) {
 		this.filepath = filepath;
 	}
-	
+
 	/**
 	 * read symptom in file
 	 * 
@@ -31,20 +31,20 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	@Override
 	public List<String> getSymptoms() throws IOException {
 		ArrayList<String> result = new ArrayList<String>();
-		
+
 		if (filepath != null) {
 			try {
 				BufferedReader reader = new BufferedReader (new FileReader(filepath));
 				String line = reader.readLine();
-				
+
 				if(line != null) {
-				while (line != null) {
-					result.add(line);
-					line = reader.readLine();
-				}
-				reader.close();
+					while (line != null) {
+						result.add(line);
+						line = reader.readLine();
+					}
+					reader.close();
 				} else {
-					throw new EmptyFileException("");
+					throw new EmptyFileException();
 				}
 			} catch (FileNotFoundException e) {
 				System.out.println("File not Found Exception");
@@ -52,7 +52,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				System.out.println("File empty");
 			}
 		}
-		
+
 		return result;
 	}
 

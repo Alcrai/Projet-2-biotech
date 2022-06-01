@@ -16,6 +16,6 @@ public interface IExecuteCount {
 	 * @throws IOException 
 	 *
 	 */
-	void setExecute() throws IOException;
+	void execute() throws IOException;
 
 }
